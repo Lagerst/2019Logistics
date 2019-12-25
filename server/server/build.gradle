@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'com.project'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	flatDir{dirs 'libs'}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	compile files('libs/postgresql-42.2.2.jar')
+	compile files('libs/postgresql-42.2.2.jre6.jar')
+	compile files('libs/postgresql-42.2.2.jre7.jar')
+	compile files('libs/commons-codec-1.11.jar')
+	compile files('libs/commons-lang3-3.9.jar')
+	compile files('libs/commons-lang3-3.9-sources.jar')
+	compile files('libs/commons-lang3-3.9-tests.jar')
+	compile files('libs/commons-lang3-3.9-test-sources.jar')
+	compile files('libs/commons-logging-1.2.jar')
+	compile files('libs/fluent-hc-4.5.10.jar')
+	compile files('libs/httpclient-4.5.10.jar')
+	compile files('libs/httpclient-cache-4.5.10.jar')
+	compile files('libs/httpclient-osgi-4.5.10.jar')
+	compile files('libs/httpclient-win-4.5.10.jar')
+	compile files('libs/httpcore-4.4.12.jar')
+	compile files('libs/httpmime-4.5.10.jar')
+	compile files('libs/jackson-annotations-2.10.1.jar')
+	compile files('libs/jackson-annotations-2.10.1-javadoc.jar')
+	compile files('libs/jackson-annotations-2.10.1-sources.jar')
+	compile files('libs/jna-4.5.2.jar')
+	compile files('libs/gson-2.8.5.jar')
+}
+
+test {
+	useJUnitPlatform()
+}
