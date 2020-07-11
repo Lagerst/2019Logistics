@@ -1,2 +1,2 @@
-cd server4business\server\
+cd backend\server\
 Start.bat

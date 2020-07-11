@@ -1,2 +1,2 @@
-cd front\vue-front
+cd frontend\vue-front
 npm run serve
